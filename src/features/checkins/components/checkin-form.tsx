@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { useAppStore } from "@/store/app-store";
-import { checkinSchema } from "@/features/checkins/checkin-schema";
 import { dictionaries } from "@/lib/i18n/dictionaries";
 
 export function CheckinForm() {
@@ -17,17 +16,13 @@ export function CheckinForm() {
     note: "",
   });
 
-  const handleSubmit = () => {
-    const payload = {
-      id: crypto.randomUUID(),
-      planId: plan.id,
-      createdAt: new Date().toISOString(),
-      ...form,
-    };
-
-    const parsed = checkinSchema.safeParse(payload);
-    if (!parsed.success) return;
-    upsertCheckin(parsed.data);
+  const handleSubmit = async () => {
+    await upsertCheckin({
+      checkinDate: form.checkinDate,
+      currentNetWorth: form.currentNetWorth,
+      annualSpending: form.annualSpending,
+      note: form.note,
+    });
     setForm({ ...form, note: "" });
   };
 

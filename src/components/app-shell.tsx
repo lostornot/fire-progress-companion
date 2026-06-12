@@ -20,11 +20,23 @@ export function AppShell({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const bootstrap = useAppStore((state) => state.bootstrap);
   const language = useAppStore((state) => state.settings.language);
+  const ready = useAppStore((state) => state.ready);
   const copy = dictionaries[language];
 
   useEffect(() => {
     bootstrap();
   }, [bootstrap]);
+
+  if (!ready) {
+    return (
+      <div className="grid min-h-screen place-items-center">
+        <div className="text-center">
+          <div className="mx-auto h-8 w-8 animate-spin rounded-full border-2 border-[var(--accent)] border-t-transparent" />
+          <p className="mt-4 text-sm text-[var(--muted)]">Loading...</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-[var(--bg)] text-[var(--fg)]">

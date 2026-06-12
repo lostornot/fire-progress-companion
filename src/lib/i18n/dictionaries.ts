@@ -51,6 +51,8 @@ export const dictionaries: Record<Language, Record<string, string>> = {
     noteSteady: "储蓄节奏保持稳定。",
     noteBonus: "奖金推高了曲线。",
     noteTravel: "旅行计划导致开销上升。",
+    noDataYet: "还没有数据。请先添加一条记录来开始追踪。",
+    createFirstPlan: "创建 FIRE 计划",
   },
   en: {
     appName: "FIRE Progress Companion",
@@ -102,5 +104,7 @@ export const dictionaries: Record<Language, Record<string, string>> = {
     noteSteady: "Saving pace stayed steady.",
     noteBonus: "Bonus pushed the curve upward.",
     noteTravel: "Spending crept up with travel plans.",
+    noDataYet: "No data yet. Add a check-in to start tracking.",
+    createFirstPlan: "Create FIRE plan",
   },
 };

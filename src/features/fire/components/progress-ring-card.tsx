@@ -8,6 +8,9 @@ import { dictionaries } from "@/lib/i18n/dictionaries";
 export function ProgressRingCard() {
   const { plan, checkins, settings } = useAppStore();
   const copy = dictionaries[settings.language];
+
+  if (!plan || checkins.length === 0) return null;
+
   const latest = checkins[checkins.length - 1];
   const metrics = calculateFireMetrics({
     annualSpending: latest.annualSpending,
