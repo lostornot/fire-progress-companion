@@ -4,13 +4,14 @@ struct SettingsView: View {
     @Environment(AppStore.self) var store
 
     var body: some View {
+        @Bindable var store = store
         NavigationStack {
             ScrollView {
                 VStack(spacing: 24) {
                     statusSection
-                    languageSection
-                    currencySection
-                    withdrawalRateSection
+                    languageSection(store: $store)
+                    currencySection(store: $store)
+                    withdrawalRateSection(store: $store)
                     actionsSection
                 }
                 .padding()
@@ -39,11 +40,11 @@ struct SettingsView: View {
         }
     }
 
-    private var languageSection: some View {
+    private func languageSection(store: Bindable<AppStore>) -> some View {
         VStack(alignment: .leading, spacing: 8) {
             Text("Language")
                 .font(.headline)
-            Picker("Language", selection: $store.settings.language) {
+            Picker("Language", selection: store.settings.language) {
                 Text("中文").tag(Language.zh)
                 Text("English").tag(Language.en)
             }
@@ -54,11 +55,11 @@ struct SettingsView: View {
         .clipShape(RoundedRectangle(cornerRadius: 16))
     }
 
-    private var currencySection: some View {
+    private func currencySection(store: Bindable<AppStore>) -> some View {
         VStack(alignment: .leading, spacing: 8) {
             Text("Currency")
                 .font(.headline)
-            Picker("Currency", selection: $store.settings.currency) {
+            Picker("Currency", selection: store.settings.currency) {
                 Text("CNY (¥)").tag(Currency.cny)
                 Text("USD ($)").tag(Currency.usd)
             }
@@ -69,13 +70,13 @@ struct SettingsView: View {
         .clipShape(RoundedRectangle(cornerRadius: 16))
     }
 
-    private var withdrawalRateSection: some View {
+    private func withdrawalRateSection(store: Bindable<AppStore>) -> some View {
         VStack(alignment: .leading, spacing: 8) {
-            Text(store.t("defaultWithdrawalRate"))
+            Text(store.wrappedValue.t("defaultWithdrawalRate"))
                 .font(.headline)
             HStack {
-                Slider(value: $store.settings.defaultWithdrawalRate, in: 0.02...0.1, step: 0.005)
-                Text(Formatters.percent(store.settings.defaultWithdrawalRate, lang: store.lang))
+                Slider(value: store.settings.defaultWithdrawalRate, in: 0.02...0.1, step: 0.005)
+                Text(Formatters.percent(store.wrappedValue.settings.defaultWithdrawalRate, lang: store.wrappedValue.lang))
                     .monospacedDigit()
             }
         }

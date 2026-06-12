@@ -5,12 +5,11 @@ import { useAppStore } from "@/store/app-store";
 import { dictionaries } from "@/lib/i18n/dictionaries";
 
 export function CheckinForm() {
-  const plan = useAppStore((state) => state.plan);
   const upsertCheckin = useAppStore((state) => state.upsertCheckin);
   const language = useAppStore((state) => state.settings.language);
   const copy = dictionaries[language];
   const [form, setForm] = useState({
-    checkinDate: "2026-06-12",
+    checkinDate: new Date().toISOString().slice(0, 10),
     currentNetWorth: 1750000,
     annualSpending: 180000,
     note: "",

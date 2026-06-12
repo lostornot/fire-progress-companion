@@ -91,6 +91,11 @@ Zustand Store（`src/store/app-store.ts`）运行在两种模式下：
 - **演示数据备注必须是字典键名** — 硬编码的英文备注无法翻译
 - **`buildInsights()` 需要 `language` 参数** — 洞察文案也必须双语
 - **退出按钮必须判断 `session`** — 未登录时不显示
+- **`buildInsights()` 必须检查 checkins 数量** — 只有 1 条或 0 条时 `previous` 为 `undefined` 会崩溃
+- **`router.push` 不能在渲染期间调用** — 必须放在 `useEffect` 中，否则违反 React 渲染契约
+- **所有 UI 文案必须走字典** — 包括 Loading 状态、退出按钮、状态提示等，不得用内联三元
+- **`src/lib/storage.ts`、`src/mock/mock-auth.ts`、`src/mock/mock-repository.ts` 是死代码** — 已删除，不要重新创建
+- **checkin 表单默认日期应为今天** — 使用 `new Date().toISOString().slice(0, 10)` 而非硬编码
 
 ## 交付检查清单
 

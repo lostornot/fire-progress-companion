@@ -1,0 +1,536 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		002F2D7756F1D50C4A08BCB4 /* InsightsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E4124F580CF08E145FC0F6 /* InsightsView.swift */; };
+		09F926EC37FDF1CAE1209A86 /* Domain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C9FA4BE5E1A56772517CA9 /* Domain.swift */; };
+		0CA3B2DCD34C70BFBE44FD3D /* CheckinsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF088C293A7004191E1A1E72 /* CheckinsView.swift */; };
+		0E2310C5E7FF026CB7A6274C /* FireCompanionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49732FE89BB79B0F196C65A /* FireCompanionApp.swift */; };
+		0F4B91643302D10A95C019DA /* Dictionaries.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB28473172FD6C4D0EA00816 /* Dictionaries.swift */; };
+		17750BAED8CC055630C669A5 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B9B6DD06A3C7FC5F7645E8 /* DashboardView.swift */; };
+		18B15E8F5C0BC38906EADBFD /* FireCompanionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49732FE89BB79B0F196C65A /* FireCompanionApp.swift */; };
+		3073173348C05448EAFABF7C /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F530F75236C06E63727222 /* LoginView.swift */; };
+		3902489251D14BCC865F8EB2 /* AppStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B70638A292BC9D250A29C0 /* AppStore.swift */; };
+		3E64A5903E99F2A33F3C4DE3 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C040B3125390BAD7BD92E2D /* SettingsView.swift */; };
+		41F6EBBECC1DABE998D19A3A /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFB69F8E271411BFDDF9E90 /* MainTabView.swift */; };
+		43F3B929FB3F74D08A6FAA32 /* QuickCalcView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 971C7B02963773E8268FE5F5 /* QuickCalcView.swift */; };
+		518BA5A161FDDC402CA562DD /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B9B6DD06A3C7FC5F7645E8 /* DashboardView.swift */; };
+		669D800ECEF4C91A94E1896A /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C040B3125390BAD7BD92E2D /* SettingsView.swift */; };
+		8B08E10D88C6DF9C2C5B1725 /* InsightEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3130E85C2B15AD661545B4 /* InsightEngine.swift */; };
+		8F57E18998DFBDCCCF50F0D6 /* Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D01346D6828E7D136C0AE4C /* Formatters.swift */; };
+		9766ADD06E789E22EE81D6D7 /* SupabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4A48AC2F5E1FE3B82B0D75 /* SupabaseService.swift */; };
+		A2C79A431DC676C478E09236 /* AppStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B70638A292BC9D250A29C0 /* AppStore.swift */; };
+		A4923B20522A01F5DE61426E /* FireCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08876347D881F7E1C01345B8 /* FireCalculator.swift */; };
+		A70B19B745ECCF8CBF7FB00D /* Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D01346D6828E7D136C0AE4C /* Formatters.swift */; };
+		B983A3D50AFCDC044ABE21C4 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFB69F8E271411BFDDF9E90 /* MainTabView.swift */; };
+		BD92A52080BC35B760E93E91 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F530F75236C06E63727222 /* LoginView.swift */; };
+		C3B703AA8266700D770360A9 /* Domain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C9FA4BE5E1A56772517CA9 /* Domain.swift */; };
+		C63AB4CE68F7A3F646B1490F /* CheckinsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF088C293A7004191E1A1E72 /* CheckinsView.swift */; };
+		C6BAB610A1A75E91D7AB1AF8 /* FireCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08876347D881F7E1C01345B8 /* FireCalculator.swift */; };
+		CBAC4332E428368C3C9D3688 /* SupabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4A48AC2F5E1FE3B82B0D75 /* SupabaseService.swift */; };
+		D3751ED8ACCD002A102A291E /* InsightsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E4124F580CF08E145FC0F6 /* InsightsView.swift */; };
+		DB79E71F864D03992ACE129E /* InsightEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3130E85C2B15AD661545B4 /* InsightEngine.swift */; };
+		DEBC2ABC76FE7BBBD0390884 /* QuickCalcView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 971C7B02963773E8268FE5F5 /* QuickCalcView.swift */; };
+		EBE60D7488DA05AB966E226F /* Dictionaries.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB28473172FD6C4D0EA00816 /* Dictionaries.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		04C9FA4BE5E1A56772517CA9 /* Domain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Domain.swift; sourceTree = "<group>"; };
+		08876347D881F7E1C01345B8 /* FireCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireCalculator.swift; sourceTree = "<group>"; };
+		0A4A48AC2F5E1FE3B82B0D75 /* SupabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupabaseService.swift; sourceTree = "<group>"; };
+		4D01346D6828E7D136C0AE4C /* Formatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatters.swift; sourceTree = "<group>"; };
+		4D3130E85C2B15AD661545B4 /* InsightEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsightEngine.swift; sourceTree = "<group>"; };
+		69B70638A292BC9D250A29C0 /* AppStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStore.swift; sourceTree = "<group>"; };
+		6C040B3125390BAD7BD92E2D /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		77F530F75236C06E63727222 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		971C7B02963773E8268FE5F5 /* QuickCalcView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickCalcView.swift; sourceTree = "<group>"; };
+		BA89722B3B672AF1F71CAD70 /* FireCompanion.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = FireCompanion.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB18C6D7E9DD5F59F7F044A9 /* FireCompanion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FireCompanion.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB28473172FD6C4D0EA00816 /* Dictionaries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dictionaries.swift; sourceTree = "<group>"; };
+		CF088C293A7004191E1A1E72 /* CheckinsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckinsView.swift; sourceTree = "<group>"; };
+		D4B9B6DD06A3C7FC5F7645E8 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		DEFB69F8E271411BFDDF9E90 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		E49732FE89BB79B0F196C65A /* FireCompanionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireCompanionApp.swift; sourceTree = "<group>"; };
+		E7E4124F580CF08E145FC0F6 /* InsightsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsightsView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		0DA74C520A8FCAAA76DB1A51 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				69B70638A292BC9D250A29C0 /* AppStore.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		2F2929ED1429F7621BF4C9F1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DEFB69F8E271411BFDDF9E90 /* MainTabView.swift */,
+				63F4F4EABB62F1E8844934C7 /* Checkins */,
+				5F9888103A7944B88345F269 /* Dashboard */,
+				FEC545E312E3BA9BE382C9D4 /* Insights */,
+				FE23722CF5EBDFB51E176097 /* Login */,
+				B4406914DC3779468CD80F15 /* Settings */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		513CFB8CC2160FE9B6B1BB30 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				04C9FA4BE5E1A56772517CA9 /* Domain.swift */,
+				08876347D881F7E1C01345B8 /* FireCalculator.swift */,
+				4D3130E85C2B15AD661545B4 /* InsightEngine.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5F9888103A7944B88345F269 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				D4B9B6DD06A3C7FC5F7645E8 /* DashboardView.swift */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		63F4F4EABB62F1E8844934C7 /* Checkins */ = {
+			isa = PBXGroup;
+			children = (
+				CF088C293A7004191E1A1E72 /* CheckinsView.swift */,
+			);
+			path = Checkins;
+			sourceTree = "<group>";
+		};
+		AD5F9727A7F0AA733E3AEEEF /* FireCompanion */ = {
+			isa = PBXGroup;
+			children = (
+				E49732FE89BB79B0F196C65A /* FireCompanionApp.swift */,
+				513CFB8CC2160FE9B6B1BB30 /* Models */,
+				DBEC8A224B1366DC6B88AFA4 /* Services */,
+				CF8A7AB5A463A27CC7BF4BF3 /* Utilities */,
+				0DA74C520A8FCAAA76DB1A51 /* ViewModels */,
+				2F2929ED1429F7621BF4C9F1 /* Views */,
+			);
+			path = FireCompanion;
+			sourceTree = "<group>";
+		};
+		B4406914DC3779468CD80F15 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				6C040B3125390BAD7BD92E2D /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		CF8A7AB5A463A27CC7BF4BF3 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				CB28473172FD6C4D0EA00816 /* Dictionaries.swift */,
+				4D01346D6828E7D136C0AE4C /* Formatters.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		DBEC8A224B1366DC6B88AFA4 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				0A4A48AC2F5E1FE3B82B0D75 /* SupabaseService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		E088C2F781382BBAF7DF7AEF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BA89722B3B672AF1F71CAD70 /* FireCompanion.app */,
+				CB18C6D7E9DD5F59F7F044A9 /* FireCompanion.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EEF189027A8941598596B209 = {
+			isa = PBXGroup;
+			children = (
+				AD5F9727A7F0AA733E3AEEEF /* FireCompanion */,
+				E088C2F781382BBAF7DF7AEF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FE23722CF5EBDFB51E176097 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				77F530F75236C06E63727222 /* LoginView.swift */,
+				971C7B02963773E8268FE5F5 /* QuickCalcView.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		FEC545E312E3BA9BE382C9D4 /* Insights */ = {
+			isa = PBXGroup;
+			children = (
+				E7E4124F580CF08E145FC0F6 /* InsightsView.swift */,
+			);
+			path = Insights;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0AA16215AE22662EC2F05DD3 /* FireCompanion_macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6C8F3BB53DA8772119B0604E /* Build configuration list for PBXNativeTarget "FireCompanion_macOS" */;
+			buildPhases = (
+				FCE8F4FB761BDD39DA1CE6EC /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FireCompanion_macOS;
+			packageProductDependencies = (
+			);
+			productName = FireCompanion_macOS;
+			productReference = CB18C6D7E9DD5F59F7F044A9 /* FireCompanion.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7C1A4B5C88BEF62BE3AE8E58 /* FireCompanion_iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FC16AB5662E1EAF2CEB04974 /* Build configuration list for PBXNativeTarget "FireCompanion_iOS" */;
+			buildPhases = (
+				1EF7B393D10E13540CE2EC03 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FireCompanion_iOS;
+			packageProductDependencies = (
+			);
+			productName = FireCompanion_iOS;
+			productReference = BA89722B3B672AF1F71CAD70 /* FireCompanion.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1A10A7260589564E86EB7008 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+				};
+			};
+			buildConfigurationList = C1494E35EEBDCFCE3D09393E /* Build configuration list for PBXProject "FireCompanion" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = EEF189027A8941598596B209;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = E088C2F781382BBAF7DF7AEF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7C1A4B5C88BEF62BE3AE8E58 /* FireCompanion_iOS */,
+				0AA16215AE22662EC2F05DD3 /* FireCompanion_macOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1EF7B393D10E13540CE2EC03 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3902489251D14BCC865F8EB2 /* AppStore.swift in Sources */,
+				C63AB4CE68F7A3F646B1490F /* CheckinsView.swift in Sources */,
+				17750BAED8CC055630C669A5 /* DashboardView.swift in Sources */,
+				EBE60D7488DA05AB966E226F /* Dictionaries.swift in Sources */,
+				09F926EC37FDF1CAE1209A86 /* Domain.swift in Sources */,
+				A4923B20522A01F5DE61426E /* FireCalculator.swift in Sources */,
+				18B15E8F5C0BC38906EADBFD /* FireCompanionApp.swift in Sources */,
+				8F57E18998DFBDCCCF50F0D6 /* Formatters.swift in Sources */,
+				8B08E10D88C6DF9C2C5B1725 /* InsightEngine.swift in Sources */,
+				D3751ED8ACCD002A102A291E /* InsightsView.swift in Sources */,
+				BD92A52080BC35B760E93E91 /* LoginView.swift in Sources */,
+				41F6EBBECC1DABE998D19A3A /* MainTabView.swift in Sources */,
+				DEBC2ABC76FE7BBBD0390884 /* QuickCalcView.swift in Sources */,
+				669D800ECEF4C91A94E1896A /* SettingsView.swift in Sources */,
+				CBAC4332E428368C3C9D3688 /* SupabaseService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FCE8F4FB761BDD39DA1CE6EC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A2C79A431DC676C478E09236 /* AppStore.swift in Sources */,
+				0CA3B2DCD34C70BFBE44FD3D /* CheckinsView.swift in Sources */,
+				518BA5A161FDDC402CA562DD /* DashboardView.swift in Sources */,
+				0F4B91643302D10A95C019DA /* Dictionaries.swift in Sources */,
+				C3B703AA8266700D770360A9 /* Domain.swift in Sources */,
+				C6BAB610A1A75E91D7AB1AF8 /* FireCalculator.swift in Sources */,
+				0E2310C5E7FF026CB7A6274C /* FireCompanionApp.swift in Sources */,
+				A70B19B745ECCF8CBF7FB00D /* Formatters.swift in Sources */,
+				DB79E71F864D03992ACE129E /* InsightEngine.swift in Sources */,
+				002F2D7756F1D50C4A08BCB4 /* InsightsView.swift in Sources */,
+				3073173348C05448EAFABF7C /* LoginView.swift in Sources */,
+				B983A3D50AFCDC044ABE21C4 /* MainTabView.swift in Sources */,
+				43F3B929FB3F74D08A6FAA32 /* QuickCalcView.swift in Sources */,
+				3E64A5903E99F2A33F3C4DE3 /* SettingsView.swift in Sources */,
+				9766ADD06E789E22EE81D6D7 /* SupabaseService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1A23804255C83F74F077CEDB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "FIRE 进度陪伴";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.firecompanion.FireCompanion-iOS";
+				PRODUCT_NAME = FireCompanion;
+				SDKROOT = iphoneos;
+				SUPABASE_KEY = "";
+				SUPABASE_URL = "";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		264B4C191C34B7061FDAC5E4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		3E5246B3926F2B3E2CB993EB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		6541D827867F2C75A5D7CF24 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "FIRE 进度陪伴";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.firecompanion.FireCompanion-macOS";
+				PRODUCT_NAME = FireCompanion;
+				SDKROOT = macosx;
+				SUPABASE_KEY = "";
+				SUPABASE_URL = "";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+			};
+			name = Release;
+		};
+		9BB9B7CCBFDB59B2FDD25260 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "FIRE 进度陪伴";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.firecompanion.FireCompanion-iOS";
+				PRODUCT_NAME = FireCompanion;
+				SDKROOT = iphoneos;
+				SUPABASE_KEY = "";
+				SUPABASE_URL = "";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		DC2CBC9F3B75106423250302 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "FIRE 进度陪伴";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.firecompanion.FireCompanion-macOS";
+				PRODUCT_NAME = FireCompanion;
+				SDKROOT = macosx;
+				SUPABASE_KEY = "";
+				SUPABASE_URL = "";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6C8F3BB53DA8772119B0604E /* Build configuration list for PBXNativeTarget "FireCompanion_macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC2CBC9F3B75106423250302 /* Debug */,
+				6541D827867F2C75A5D7CF24 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		C1494E35EEBDCFCE3D09393E /* Build configuration list for PBXProject "FireCompanion" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				264B4C191C34B7061FDAC5E4 /* Debug */,
+				3E5246B3926F2B3E2CB993EB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		FC16AB5662E1EAF2CEB04974 /* Build configuration list for PBXNativeTarget "FireCompanion_iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1A23804255C83F74F077CEDB /* Debug */,
+				9BB9B7CCBFDB59B2FDD25260 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1A10A7260589564E86EB7008 /* Project object */;
+}

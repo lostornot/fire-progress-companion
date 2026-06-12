@@ -2,22 +2,31 @@ import SwiftUI
 
 struct CheckinsView: View {
     @Environment(AppStore.self) var store
+    @Environment(\.horizontalSizeClass) var sizeClass
     @State private var date = Date()
     @State private var netWorth: Double = 1750000
     @State private var spending: Double = 180000
     @State private var note = ""
 
     var body: some View {
-        NavigationStack {
-            ScrollView {
+        ScrollView {
+            if sizeClass == .regular {
+                HStack(alignment: .top, spacing: 24) {
+                    addForm
+                        .frame(width: 360)
+                    historySection
+                        .frame(maxWidth: .infinity)
+                }
+                .padding()
+            } else {
                 VStack(spacing: 24) {
                     addForm
                     historySection
                 }
                 .padding()
             }
-            .navigationTitle(store.t("checkins"))
         }
+        .navigationTitle(store.t("checkins"))
     }
 
     private var addForm: some View {
@@ -63,8 +72,7 @@ struct CheckinsView: View {
                         VStack(alignment: .leading, spacing: 4) {
                             Text(Formatters.shortDate(c.checkinDate))
                                 .font(.headline)
-                            let noteKey = c.note
-                            let translated = store.dict[noteKey] ?? noteKey
+                            let translated = store.dict[c.note] ?? c.note
                             Text(translated.isEmpty ? store.t("noNote") : translated)
                                 .font(.caption)
                                 .foregroundStyle(.secondary)
@@ -87,7 +95,6 @@ struct CheckinsView: View {
                 .frame(width: 100, alignment: .leading)
             TextField("", value: value, format: .number)
                 .textFieldStyle(.roundedBorder)
-                .keyboardType(.decimalPad)
         }
     }
 

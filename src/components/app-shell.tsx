@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useEffect } from "react";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useAppStore } from "@/store/app-store";
 import { dictionaries } from "@/lib/i18n/dictionaries";
 import { LanguageSwitcher } from "@/components/language-switcher";
@@ -18,21 +18,29 @@ const routes = [
 
 export function AppShell({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
+  const router = useRouter();
   const bootstrap = useAppStore((state) => state.bootstrap);
-  const language = useAppStore((state) => state.settings.language);
   const ready = useAppStore((state) => state.ready);
+  const session = useAppStore((state) => state.session);
+  const signOut = useAppStore((state) => state.signOut);
+  const language = useAppStore((state) => state.settings.language);
   const copy = dictionaries[language];
 
   useEffect(() => {
     bootstrap();
   }, [bootstrap]);
 
+  const handleSignOut = async () => {
+    await signOut();
+    router.push("/");
+  };
+
   if (!ready) {
     return (
       <div className="grid min-h-screen place-items-center">
         <div className="text-center">
           <div className="mx-auto h-8 w-8 animate-spin rounded-full border-2 border-[var(--accent)] border-t-transparent" />
-          <p className="mt-4 text-sm text-[var(--muted)]">Loading...</p>
+          <p className="mt-4 text-sm text-[var(--muted)]">{copy.loading}</p>
         </div>
       </div>
     );
@@ -56,6 +64,15 @@ export function AppShell({ children }: { children: React.ReactNode }) {
           <div className="flex items-center gap-2">
             <LanguageSwitcher />
             <CurrencySwitcher />
+            {session && (
+              <button
+                type="button"
+                onClick={handleSignOut}
+                className="rounded-full border border-[var(--line)] px-3 py-1.5 text-sm text-[var(--muted)] transition hover:bg-[var(--surface)] hover:text-[var(--fg)]"
+              >
+                {copy.signOut}
+              </button>
+            )}
           </div>
         </div>
       </header>

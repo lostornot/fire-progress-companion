@@ -1,3 +1,5 @@
+"use client";
+
 import { formatCurrency, formatPercent, formatDate } from "@/lib/formatters";
 import { useAppStore } from "@/store/app-store";
 import { calculateFireMetrics } from "@/features/fire/calculations";

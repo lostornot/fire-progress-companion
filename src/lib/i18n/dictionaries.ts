@@ -53,6 +53,10 @@ export const dictionaries: Record<Language, Record<string, string>> = {
     noteTravel: "旅行计划导致开销上升。",
     noDataYet: "还没有数据。请先添加一条记录来开始追踪。",
     createFirstPlan: "创建 FIRE 计划",
+    loading: "加载中...",
+    signOut: "退出登录",
+    signedInStatus: "已登录 — 数据已保存到云端",
+    demoModeStatus: "演示模式 — 数据保存在浏览器本地",
   },
   en: {
     appName: "FIRE Progress Companion",
@@ -106,5 +110,9 @@ export const dictionaries: Record<Language, Record<string, string>> = {
     noteTravel: "Spending crept up with travel plans.",
     noDataYet: "No data yet. Add a check-in to start tracking.",
     createFirstPlan: "Create FIRE plan",
+    loading: "Loading...",
+    signOut: "Sign out",
+    signedInStatus: "Signed in — data saved to the cloud",
+    demoModeStatus: "Demo mode — data saved locally",
   },
 };

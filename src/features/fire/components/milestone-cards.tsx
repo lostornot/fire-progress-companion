@@ -1,3 +1,5 @@
+"use client";
+
 import { getMilestoneState, calculateFireMetrics } from "@/features/fire/calculations";
 import { useAppStore } from "@/store/app-store";
 import { dictionaries } from "@/lib/i18n/dictionaries";

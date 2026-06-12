@@ -14,6 +14,7 @@ targets:
       - path: FireCompanion
     settings:
       base:
+        GENERATE_INFOPLIST_FILE: YES
         INFOPLIST_KEY_CFBundleDisplayName: "FIRE 进度陪伴"
         INFOPLIST_KEY_LSApplicationCategoryType: "public.app-category.finance"
         SWIFT_EMIT_LOC_STRINGS: YES

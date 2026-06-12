@@ -40,7 +40,6 @@ struct QuickCalcView: View {
                 .foregroundStyle(.secondary)
             TextField("", value: value, format: .number)
                 .textFieldStyle(.roundedBorder)
-                .keyboardType(.decimalPad)
         }
     }
 

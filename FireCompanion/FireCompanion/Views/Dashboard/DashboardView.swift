@@ -3,19 +3,34 @@ import Charts
 
 struct DashboardView: View {
     @Environment(AppStore.self) var store
+    @Environment(\.horizontalSizeClass) var sizeClass
+
+    private var columns: [GridItem] {
+        sizeClass == .compact
+            ? [GridItem(.adaptive(minimum: 150))]
+            : [GridItem(.adaptive(minimum: 200))]
+    }
 
     var body: some View {
-        NavigationStack {
-            ScrollView {
-                VStack(spacing: 24) {
-                    summaryCards
+        ScrollView {
+            VStack(spacing: 24) {
+                summaryCards
+                if sizeClass == .regular {
+                    HStack(alignment: .top, spacing: 24) {
+                        chartSection
+                            .frame(maxWidth: .infinity)
+                        progressRing
+                            .frame(width: 220)
+                    }
+                } else {
                     chartSection
-                    milestonesSection
+                    progressRing
                 }
-                .padding()
+                milestonesSection
             }
-            .navigationTitle(store.t("dashboard"))
+            .padding()
         }
+        .navigationTitle(store.t("dashboard"))
     }
 
     private var summaryCards: some View {
@@ -26,7 +41,7 @@ struct DashboardView: View {
             (store.t("progress"), Formatters.percent(m.progress, lang: store.lang)),
             (store.t("gap"), Formatters.currency(m.gap, currency: store.settings.currency, lang: store.lang)),
         ]
-        return LazyVGrid(columns: [GridItem(.adaptive(minimum: 150))], spacing: 12) {
+        return LazyVGrid(columns: columns, spacing: 12) {
             ForEach(items, id: \.0) { label, value in
                 VStack(alignment: .leading, spacing: 4) {
                     Text(label)
@@ -60,7 +75,7 @@ struct DashboardView: View {
                         .foregroundStyle(Color.accentColor.opacity(0.1))
                 }
             }
-            .frame(height: 200)
+            .frame(height: sizeClass == .regular ? 280 : 200)
             .chartXAxis { AxisMarks(values: .automatic) }
         }
         .padding()
@@ -68,30 +83,55 @@ struct DashboardView: View {
         .clipShape(RoundedRectangle(cornerRadius: 16))
     }
 
+    private var progressRing: some View {
+        let progress = min(store.metrics.progress, 1.0)
+        return VStack(spacing: 12) {
+            ZStack {
+                Circle()
+                    .stroke(.gray.opacity(0.15), lineWidth: 20)
+                Circle()
+                    .trim(from: 0, to: progress)
+                    .stroke(Color.accentColor, style: StrokeStyle(lineWidth: 20, lineCap: .round))
+                    .rotationEffect(.degrees(-90))
+                    .animation(.easeInOut(duration: 0.8), value: progress)
+                VStack(spacing: 4) {
+                    Text(store.t("currentProgress"))
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                    Text(Formatters.percent(progress, lang: store.lang))
+                        .font(.title2.bold())
+                }
+            }
+            .frame(width: 180, height: 180)
+        }
+        .frame(maxWidth: .infinity)
+        .padding()
+        .background(.gray.opacity(0.08))
+        .clipShape(RoundedRectangle(cornerRadius: 16))
+    }
+
     private var milestonesSection: some View {
         let milestones = FireCalculator.milestones(progress: store.metrics.progress)
-        return VStack(alignment: .leading, spacing: 8) {
-            LazyVGrid(columns: [GridItem(.adaptive(minimum: 80))], spacing: 12) {
-                ForEach(milestones, id: \.label) { m in
-                    VStack(spacing: 4) {
-                        Text(store.t("milestone"))
-                            .font(.caption2)
-                            .foregroundStyle(.secondary)
-                        Text(m.label)
-                            .font(.title2.bold())
-                        Text(m.reached ? store.t("reached") : store.t("inProgress"))
-                            .font(.caption)
-                            .foregroundStyle(m.reached ? .green : .secondary)
-                    }
-                    .frame(maxWidth: .infinity)
-                    .padding()
-                    .background(m.reached ? Color.green.opacity(0.1) : Color.gray.opacity(0.08))
-                    .clipShape(RoundedRectangle(cornerRadius: 12))
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 12)
-                            .stroke(m.reached ? Color.green.opacity(0.3) : Color.clear, lineWidth: 1)
-                    )
+        return LazyVGrid(columns: [GridItem(.adaptive(minimum: 100))], spacing: 12) {
+            ForEach(milestones, id: \.label) { m in
+                VStack(spacing: 4) {
+                    Text(store.t("milestone"))
+                        .font(.caption2)
+                        .foregroundStyle(.secondary)
+                    Text(m.label)
+                        .font(.title2.bold())
+                    Text(m.reached ? store.t("reached") : store.t("inProgress"))
+                        .font(.caption)
+                        .foregroundStyle(m.reached ? .green : .secondary)
                 }
+                .frame(maxWidth: .infinity)
+                .padding()
+                .background(m.reached ? Color.green.opacity(0.1) : Color.gray.opacity(0.08))
+                .clipShape(RoundedRectangle(cornerRadius: 12))
+                .overlay(
+                    RoundedRectangle(cornerRadius: 12)
+                        .stroke(m.reached ? Color.green.opacity(0.3) : Color.clear, lineWidth: 1)
+                )
             }
         }
     }

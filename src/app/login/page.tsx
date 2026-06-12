@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { useAppStore } from "@/store/app-store";
 import { dictionaries } from "@/lib/i18n/dictionaries";
@@ -11,18 +12,19 @@ export default function LoginPage() {
   const language = useAppStore((state) => state.settings.language);
   const copy = dictionaries[language];
 
-  if (session) {
-    router.push("/dashboard");
-    return null;
-  }
+  useEffect(() => {
+    if (session) {
+      router.push("/dashboard");
+    }
+  }, [session, router]);
+
+  if (session) return null;
 
   const handleLogin = async (provider: "google" | "apple") => {
     await signInDemo(provider);
-    // For demo mode, redirect immediately
-    if (!process.env.NEXT_PUBLIC_SUPABASE_URL || process.env.NEXT_PUBLIC_SUPABASE_URL.includes("YOUR_PROJECT")) {
+    if (!process.env.NEXT_PUBLIC_SUPABASE_URL || process.env.NEXT_PUBLIC_SUPABASE_URL.includes("your-supabase")) {
       router.push("/dashboard");
     }
-    // For real Supabase, the OAuth redirect handles navigation
   };
 
   return (

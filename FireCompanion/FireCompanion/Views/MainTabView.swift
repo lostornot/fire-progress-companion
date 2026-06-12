@@ -2,21 +2,78 @@ import SwiftUI
 
 struct MainTabView: View {
     @Environment(AppStore.self) var store
+    @Environment(\.horizontalSizeClass) var sizeClass
 
     var body: some View {
+        if sizeClass == .compact {
+            compactLayout
+        } else {
+            regularLayout
+        }
+    }
+
+    private var compactLayout: some View {
         TabView {
-            Tab(store.t("dashboard"), systemImage: "chart.line.uptrend.xyaxis") {
+            NavigationStack {
                 DashboardView()
             }
-            Tab(store.t("checkins"), systemImage: "plus.circle") {
+            .tabItem {
+                Label(store.t("dashboard"), systemImage: "chart.line.uptrend.xyaxis")
+            }
+
+            NavigationStack {
                 CheckinsView()
             }
-            Tab(store.t("insights"), systemImage: "lightbulb") {
+            .tabItem {
+                Label(store.t("checkins"), systemImage: "plus.circle")
+            }
+
+            NavigationStack {
                 InsightsView()
             }
-            Tab(store.t("settings"), systemImage: "gear") {
+            .tabItem {
+                Label(store.t("insights"), systemImage: "lightbulb")
+            }
+
+            NavigationStack {
                 SettingsView()
             }
+            .tabItem {
+                Label(store.t("settings"), systemImage: "gear")
+            }
+        }
+    }
+
+    private var regularLayout: some View {
+        NavigationSplitView {
+            List {
+                NavigationLink {
+                    DashboardView()
+                } label: {
+                    Label(store.t("dashboard"), systemImage: "chart.line.uptrend.xyaxis")
+                }
+
+                NavigationLink {
+                    CheckinsView()
+                } label: {
+                    Label(store.t("checkins"), systemImage: "plus.circle")
+                }
+
+                NavigationLink {
+                    InsightsView()
+                } label: {
+                    Label(store.t("insights"), systemImage: "lightbulb")
+                }
+
+                NavigationLink {
+                    SettingsView()
+                } label: {
+                    Label(store.t("settings"), systemImage: "gear")
+                }
+            }
+            .navigationTitle(store.t("appName"))
+        } detail: {
+            DashboardView()
         }
     }
 }
