@@ -1,0 +1,21 @@
+name: FireCompanion
+options:
+  bundleIdPrefix: com.firecompanion
+  deploymentTarget:
+    iOS: "17.0"
+    macOS: "14.0"
+  xcodeVersion: "16.0"
+
+targets:
+  FireCompanion:
+    type: application
+    platform: [iOS, macOS]
+    sources:
+      - path: FireCompanion
+    settings:
+      base:
+        INFOPLIST_KEY_CFBundleDisplayName: "FIRE 进度陪伴"
+        INFOPLIST_KEY_LSApplicationCategoryType: "public.app-category.finance"
+        SWIFT_EMIT_LOC_STRINGS: YES
+        SUPABASE_URL: ""
+        SUPABASE_KEY: ""

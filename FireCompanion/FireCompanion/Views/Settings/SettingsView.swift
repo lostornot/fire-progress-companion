@@ -1,0 +1,114 @@
+import SwiftUI
+
+struct SettingsView: View {
+    @Environment(AppStore.self) var store
+
+    var body: some View {
+        NavigationStack {
+            ScrollView {
+                VStack(spacing: 24) {
+                    statusSection
+                    languageSection
+                    currencySection
+                    withdrawalRateSection
+                    actionsSection
+                }
+                .padding()
+            }
+            .navigationTitle(store.t("settings"))
+        }
+    }
+
+    private var statusSection: some View {
+        Group {
+            if store.session != nil {
+                Label(store.t("signedIn"), systemImage: "checkmark.circle.fill")
+                    .foregroundStyle(.green)
+                    .padding()
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .background(Color.green.opacity(0.1))
+                    .clipShape(RoundedRectangle(cornerRadius: 12))
+            } else {
+                Label(store.t("demoMode"), systemImage: "info.circle")
+                    .foregroundStyle(.secondary)
+                    .padding()
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .background(.gray.opacity(0.08))
+                    .clipShape(RoundedRectangle(cornerRadius: 12))
+            }
+        }
+    }
+
+    private var languageSection: some View {
+        VStack(alignment: .leading, spacing: 8) {
+            Text("Language")
+                .font(.headline)
+            Picker("Language", selection: $store.settings.language) {
+                Text("中文").tag(Language.zh)
+                Text("English").tag(Language.en)
+            }
+            .pickerStyle(.segmented)
+        }
+        .padding()
+        .background(.gray.opacity(0.08))
+        .clipShape(RoundedRectangle(cornerRadius: 16))
+    }
+
+    private var currencySection: some View {
+        VStack(alignment: .leading, spacing: 8) {
+            Text("Currency")
+                .font(.headline)
+            Picker("Currency", selection: $store.settings.currency) {
+                Text("CNY (¥)").tag(Currency.cny)
+                Text("USD ($)").tag(Currency.usd)
+            }
+            .pickerStyle(.segmented)
+        }
+        .padding()
+        .background(.gray.opacity(0.08))
+        .clipShape(RoundedRectangle(cornerRadius: 16))
+    }
+
+    private var withdrawalRateSection: some View {
+        VStack(alignment: .leading, spacing: 8) {
+            Text(store.t("defaultWithdrawalRate"))
+                .font(.headline)
+            HStack {
+                Slider(value: $store.settings.defaultWithdrawalRate, in: 0.02...0.1, step: 0.005)
+                Text(Formatters.percent(store.settings.defaultWithdrawalRate, lang: store.lang))
+                    .monospacedDigit()
+            }
+        }
+        .padding()
+        .background(.gray.opacity(0.08))
+        .clipShape(RoundedRectangle(cornerRadius: 16))
+    }
+
+    private var actionsSection: some View {
+        VStack(spacing: 12) {
+            if store.session != nil {
+                Button {
+                    store.signOut()
+                } label: {
+                    Text(store.t("signOut"))
+                        .frame(maxWidth: .infinity)
+                        .padding()
+                        .background(.black)
+                        .foregroundStyle(.white)
+                        .clipShape(RoundedRectangle(cornerRadius: 16))
+                }
+            }
+
+            Button {
+                store.resetDemo()
+            } label: {
+                Text(store.t("resetDemo"))
+                    .frame(maxWidth: .infinity)
+                    .padding()
+                    .background(Color.orange)
+                    .foregroundStyle(.white)
+                    .clipShape(RoundedRectangle(cornerRadius: 16))
+            }
+        }
+    }
+}
