@@ -1,6 +1,7 @@
 import Foundation
 import SwiftUI
 
+@MainActor
 @Observable
 final class AppStore {
     var ready = false
@@ -51,6 +52,12 @@ final class AppStore {
 
     func signOut() {
         session = nil
+        plan = FirePlan(id: "demo-plan", userId: "demo-user", annualSpending: 180000, withdrawalRate: 0.04, targetAmount: 4500000, currency: .cny, updatedAt: Date())
+        checkins = [
+            Checkin(id: "c1", planId: "demo-plan", checkinDate: Date(timeIntervalSince1970: 1740787200), currentNetWorth: 1420000, annualSpending: 170000, note: "noteSteady", createdAt: Date()),
+            Checkin(id: "c2", planId: "demo-plan", checkinDate: Date(timeIntervalSince1970: 1743465600), currentNetWorth: 1515000, annualSpending: 175000, note: "noteBonus", createdAt: Date()),
+            Checkin(id: "c3", planId: "demo-plan", checkinDate: Date(timeIntervalSince1970: 1746057600), currentNetWorth: 1650000, annualSpending: 180000, note: "noteTravel", createdAt: Date()),
+        ]
     }
 
     func addCheckin(date: Date, netWorth: Double, spending: Double, note: String) {

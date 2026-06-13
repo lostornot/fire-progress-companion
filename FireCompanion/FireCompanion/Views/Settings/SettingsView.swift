@@ -5,32 +5,30 @@ struct SettingsView: View {
 
     var body: some View {
         @Bindable var store = store
-        NavigationStack {
-            ScrollView {
-                VStack(spacing: 24) {
-                    statusSection
-                    languageSection(store: $store)
-                    currencySection(store: $store)
-                    withdrawalRateSection(store: $store)
-                    actionsSection
-                }
-                .padding()
+        ScrollView {
+            VStack(spacing: 24) {
+                statusSection
+                languageSection(store: $store)
+                currencySection(store: $store)
+                withdrawalRateSection(store: $store)
+                actionsSection
             }
-            .navigationTitle(store.t("settings"))
+            .padding()
         }
+        .navigationTitle(store.t("settings"))
     }
 
     private var statusSection: some View {
         Group {
             if store.session != nil {
-                Label(store.t("signedIn"), systemImage: "checkmark.circle.fill")
+                Label(store.t("signedInStatus"), systemImage: "checkmark.circle.fill")
                     .foregroundStyle(.green)
                     .padding()
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .background(Color.green.opacity(0.1))
                     .clipShape(RoundedRectangle(cornerRadius: 12))
             } else {
-                Label(store.t("demoMode"), systemImage: "info.circle")
+                Label(store.t("demoModeStatus"), systemImage: "info.circle")
                     .foregroundStyle(.secondary)
                     .padding()
                     .frame(maxWidth: .infinity, alignment: .leading)
@@ -42,7 +40,7 @@ struct SettingsView: View {
 
     private func languageSection(store: Bindable<AppStore>) -> some View {
         VStack(alignment: .leading, spacing: 8) {
-            Text("Language")
+            Text(store.t("language"))
                 .font(.headline)
             Picker("Language", selection: store.settings.language) {
                 Text("中文").tag(Language.zh)
@@ -57,7 +55,7 @@ struct SettingsView: View {
 
     private func currencySection(store: Bindable<AppStore>) -> some View {
         VStack(alignment: .leading, spacing: 8) {
-            Text("Currency")
+            Text(store.t("currency"))
                 .font(.headline)
             Picker("Currency", selection: store.settings.currency) {
                 Text("CNY (¥)").tag(Currency.cny)

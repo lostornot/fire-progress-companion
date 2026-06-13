@@ -6,6 +6,11 @@ export default defineConfig({
     environment: "jsdom",
     globals: true,
     exclude: ["tests/e2e/**", "node_modules/**"],
+    coverage: {
+      provider: "v8",
+      include: ["src/**/*.ts", "src/**/*.tsx"],
+      exclude: ["src/**/*.test.ts", "src/**/*.spec.ts", "src/types/**"],
+    },
   },
   resolve: {
     alias: {

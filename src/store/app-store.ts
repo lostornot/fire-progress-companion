@@ -74,7 +74,7 @@ function saveDemoToStorage(data: { profile: Profile; plan: FirePlan; checkins: C
 const isSupabaseConfigured =
   typeof window !== "undefined" &&
   !!process.env.NEXT_PUBLIC_SUPABASE_URL &&
-  !process.env.NEXT_PUBLIC_SUPABASE_URL.includes("YOUR_PROJECT");
+  !process.env.NEXT_PUBLIC_SUPABASE_URL.includes("your-supabase");
 
 export const useAppStore = create<AppState>((set, get) => ({
   ready: false,
@@ -161,7 +161,12 @@ export const useAppStore = create<AppState>((set, get) => ({
     // Demo mode fallback
     const stored = loadDemoFromStorage();
     const raw = typeof window !== "undefined" ? localStorage.getItem(SESSION_KEY) : null;
-    const session = raw ? JSON.parse(raw) : null;
+    let session = null;
+    try {
+      session = raw ? JSON.parse(raw) : null;
+    } catch {
+      session = null;
+    }
     set({
       ready: true,
       mode: "demo",
