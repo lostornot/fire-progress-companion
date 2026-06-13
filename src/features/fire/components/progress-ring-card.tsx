@@ -21,7 +21,7 @@ export function ProgressRingCard() {
   const angle = progress * 360;
 
   return (
-    <section className="glass-card flex flex-col items-center justify-center gap-4">
+    <section className="glass-card animate-scale-in flex flex-col items-center justify-center gap-4">
       <div
         className="grid h-56 w-56 place-items-center rounded-full"
         style={{

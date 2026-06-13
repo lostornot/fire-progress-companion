@@ -20,8 +20,8 @@ export function InsightCards() {
 
   return (
     <div className="grid gap-4">
-      {insights.map((item) => (
-        <article key={item.id} className="glass-card">
+      {insights.map((item, i) => (
+        <article key={item.id} className="glass-card animate-slide-up" style={{ "--delay": i } as React.CSSProperties}>
           <p className="text-sm uppercase tracking-[0.2em] text-[var(--muted)]">{item.kind}</p>
           <h2 className="mt-3 text-2xl font-semibold">{item.title}</h2>
           <p className="mt-2 text-[var(--muted)]">{item.body}</p>

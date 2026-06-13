@@ -19,10 +19,11 @@ export function MilestoneCards() {
 
   return (
     <section className="grid gap-3 md:grid-cols-4">
-      {getMilestoneState(metrics.progress).map((item) => (
+      {getMilestoneState(metrics.progress).map((item, i) => (
         <article
           key={item.label}
-          className={item.reached ? "glass-card border-[var(--accent)] bg-[var(--accent-soft)]" : "glass-card"}
+          style={{ "--delay": i } as React.CSSProperties}
+          className={`${item.reached ? "glass-card border-[var(--accent)] bg-[var(--accent-soft)]" : "glass-card"} animate-slide-up`}
         >
           <p className="text-sm text-[var(--muted)]">{copy.milestone}</p>
           <p className="mt-2 text-2xl font-semibold">{item.label}</p>

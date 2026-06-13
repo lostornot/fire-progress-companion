@@ -34,8 +34,8 @@ export function ProgressSummary() {
 
   return (
     <section className="grid gap-4 md:grid-cols-2 xl:grid-cols-5">
-      {cards.map(([label, value]) => (
-        <article key={label} className="glass-card p-5">
+      {cards.map(([label, value], i) => (
+        <article key={label} className="glass-card animate-slide-up p-5" style={{ "--delay": i } as React.CSSProperties}>
           <p className="text-sm text-[var(--muted)]">{label}</p>
           <p className="mt-2 text-2xl font-semibold">{value}</p>
         </article>

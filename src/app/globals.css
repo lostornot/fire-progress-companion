@@ -36,4 +36,68 @@ body {
 
 .glass-card {
   @apply rounded-3xl border border-[var(--line)] bg-white/90 p-6 shadow-[0_10px_30px_rgba(31,41,51,0.06)];
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.glass-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 36px rgba(31, 41, 51, 0.1);
+}
+
+button,
+[role="button"],
+a[class*="rounded-full"] {
+  transition: transform 0.1s ease;
+}
+
+button:active,
+[role="button"]:active,
+a[class*="rounded-full"]:active {
+  transform: scale(0.98);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes countUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease both;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.5s ease both;
+  animation-delay: calc(var(--delay, 0) * 100ms);
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.5s ease both;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+@view-transition {
+  navigation: auto;
 }

@@ -5,6 +5,7 @@ import { calculateFireMetrics, normalizeWithdrawalRate } from "@/features/fire/c
 import { useAppStore } from "@/store/app-store";
 import { formatCurrency, formatPercent } from "@/lib/formatters";
 import { dictionaries } from "@/lib/i18n/dictionaries";
+import { SmartCurrencyInput } from "@/components/smart-currency-input";
 
 export function QuickCalcCard() {
   const { language, currency, defaultWithdrawalRate } = useAppStore((state) => state.settings);
@@ -23,24 +24,8 @@ export function QuickCalcCard() {
     <section className="glass-card space-y-4">
       <h2 className="text-2xl font-semibold">FIRE</h2>
       <div className="grid gap-3 md:grid-cols-3">
-        <label className="space-y-2">
-          <span className="text-sm text-[var(--muted)]">{copy.annualSpending}</span>
-          <input
-            className="w-full rounded-2xl border border-[var(--line)] px-4 py-3"
-            type="number"
-            value={annualSpending}
-            onChange={(event) => setAnnualSpending(Number(event.target.value))}
-          />
-        </label>
-        <label className="space-y-2">
-          <span className="text-sm text-[var(--muted)]">{copy.currentNetWorth}</span>
-          <input
-            className="w-full rounded-2xl border border-[var(--line)] px-4 py-3"
-            type="number"
-            value={currentNetWorth}
-            onChange={(event) => setCurrentNetWorth(Number(event.target.value))}
-          />
-        </label>
+        <SmartCurrencyInput label={copy.annualSpending} value={annualSpending} onChange={setAnnualSpending} language={language} currency={currency} />
+        <SmartCurrencyInput label={copy.currentNetWorth} value={currentNetWorth} onChange={setCurrentNetWorth} language={language} currency={currency} />
         <label className="space-y-2">
           <span className="text-sm text-[var(--muted)]">{copy.withdrawalRate}</span>
           <input
