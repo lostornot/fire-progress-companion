@@ -43,3 +43,4 @@ next-env.d.ts
 # Xcode user data
 xcuserdata/
 *.xcuserstate
+test-results/
